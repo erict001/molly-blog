@@ -1,0 +1,55 @@
+#places {
+    display: flex;
+    flex-direction: column;
+    width: 10rem
+}
+
+#places li {
+    list-style-type: none;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem
+}
+
+.header h1 {
+    width: 90%
+}
+
+#login-button {
+    display: flex;
+    justify-content: flex-end;
+    height: fit-content;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+}
+
+.body section {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 20rem;
+    margin-left: 5rem;
+    border: 3px solid black;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+.image {
+    width: 20rem
+}
