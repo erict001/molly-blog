@@ -26,5 +26,5 @@ window.onclick = function(event) {
 }
 
 changePage.addEventListener("click", function(){
-    location.href="./backend.html"
+    location.href="/add-post"
 })

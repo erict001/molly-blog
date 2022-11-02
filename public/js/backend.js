@@ -10,5 +10,5 @@ function boldText() {
 
 
 pageChange.addEventListener("click", function(){
-    location.href="./index.html"
+    location.href="/"
 })
