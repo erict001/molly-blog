@@ -41,7 +41,6 @@ function addBlog(event) {
 function resetText() {
     blogTitle.value = ""
     blogContent.value = ""
-
 }
 
 submitBlog.addEventListener("click", addBlog)
