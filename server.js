@@ -2,6 +2,11 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const blogs = require('./db/blogs');
+const Blog = require('./models/blogs');
+// const sequelize = require('./config/connection');
+
+// const routes = require('./routes');
+
 
 const port = 3000
 
@@ -13,6 +18,9 @@ app.use(express.json())
 //This middleware will parse that string into an object containing key value pairs
 app.use(express.urlencoded({ extended: true }));
 
+
+// WORKING ON MODULARIZING ROUTES
+// app.use(routes)
 
 // FRONT END
 
@@ -27,6 +35,9 @@ app.get('/add-post', function (req, res) {
 
 // BACK END
 app.get("/api/blogs", (req, res) => {
+  // Blog.findAll().then((blogData) => {
+  //   res.json(blogData)
+  // })
   console.log(blogs)
   res.json(blogs)
 })
@@ -61,6 +72,8 @@ app.get("*", function (req, res) {
 })
 
 
-app.listen(port, () => {
-  console.log(`server listening on port: http://localhost:${port}`)
-})
+app.listen(port, () => console.log(`server listening on port: http://localhost:${port}`));
+
+// sequelize.sync({ force: false }).then(() => {
+//   app.listen(port, () => console.log(`server listening on port: http://localhost:${port}`));
+// })
