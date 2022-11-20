@@ -1,8 +1,8 @@
 // BACK END
 app.get("/api/blogs", (req, res) => {
-    // Blog.findAll().then((blogData) => {
-    //   res.json(blogData)
-    // })
+    Blog.findAll().then((blogData) => {
+      res.json(blogData)
+    })
     console.log(blogs)
     res.json(blogs)
   })

@@ -1,37 +1,37 @@
-// const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-// class Blog extends Model { }
+class Blog extends Model { }
 
-// Blog.init(
-//   {
-//     // Manually define the primary key
-//     blog_id: {
-//       type: DataTypes.INTEGER,
-//       primaryKey: true,
-//       autoIncrement: true
-//     },
-//     title: {
-//       type: DataTypes.STRING
-//     },
-//     blog_content: {
-//       type: DataTypes.STRING
-//     },
-//     blog_description: {
-//       type: DataTypes.STRING
-//     },
-//     author: {
-//       type: DataTypes.STRING
-//     }
-//   },
-//   {
-//     sequelize,
-//     timestamps: false,
-//     // Prevent sequelize from renaming the table
-//     freezeTableName: true,
-//     underscored: true,
-//     modelName: 'book'
-//   }
-// );
+Blog.init(
+  {
+    // Manually define the primary key
+    blog_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING
+    },
+    blog_content: {
+      type: DataTypes.STRING
+    },
+    blog_description: {
+      type: DataTypes.STRING
+    },
+    author: {
+      type: DataTypes.STRING
+    }
+  },
+  {
+    sequelize,
+    timestamps: false,
+    // Prevent sequelize from renaming the table
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'book'
+  }
+);
 
-// module.exports = Blog;
+module.exports = Blog;
