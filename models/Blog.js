@@ -26,11 +26,6 @@ Blog.init(
   },
   {
     sequelize,
-    timestamps: false,
-    // Prevent sequelize from renaming the table
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'book'
   }
 );
 

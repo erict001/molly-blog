@@ -1,3 +1,5 @@
+const router = require("express").Router();
+
 const bold = document.getElementById("bold")
 const blogContent = document.getElementById("blog-content")
 const pageChange = document.getElementById("pageChange")
@@ -44,3 +46,5 @@ function resetText() {
 }
 
 submitBlog.addEventListener("click", addBlog)
+
+module.exports = router

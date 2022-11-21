@@ -1,37 +1,78 @@
+const router = require('express').Router();
+const path = require("path");
+const { Blog } = require("../../models");
+
+
+
 // BACK END
-app.get("/api/blogs", (req, res) => {
-    Blog.findAll().then((blogData) => {
-      res.json(blogData)
+router.get("/", (req, res) => {
+  Blog.findAll({include:[User, Comments]})
+    .then(dbBlogs => {
+      res.json(dbBlogs);
     })
-    console.log(blogs)
-    res.json(blogs)
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "an error occured", err });
+    });
+});
+
+router.get("/:id", (req, res) => {
+  Blog.findByPk(req.params.id,{include:[User, Comments]})
+    .then(dbBlog => {
+      res.json(dbBlog);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "an error occured", err });
+    });
+});
+
+router.post("/", (req, res) => {
+  Blog.create({
+    title:req.body.title,
+    body:req.body.body,
+    UserId:req.session.user.id
   })
-  
-  app.get("/api/blogs/:id", (req, res) => {
-    // res.json(blogs)
-    for (let i = 0; i < blogs.length; i++) {
-      if (blogs[i].id == req.params.id) {
-        return res.json(blogs[i])
-      }
+    .then(newBlog => {
+      res.json(newBlog);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ msg: "an error occured", err });
+    });
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    const blogData = await Blog.update(req.body, 
+    {
+      where: {
+      id: req.params.id
+    },
+    })
+  .then((updatedBlog) => {
+    res.redirect("/home");
+  })
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ msg: "an error occured", err });
+  }
+});
+
+router.delete("/:id", (req, res) => {
+  Blog.destroy({
+    where: {
+      id: req.params.id
     }
+  }).then(delBlog => {
+    res.json(delBlog);
   })
-  
-  app.post("/api/blogs", (req, res) => {
-    console.log(req.body)
-    blogs.push(req.body)
-    res.json(blogs)
-  })
-  
-  app.put("/api/blogs/:id", (req, res) => {
-    console.log(req.body)
-    for (let i = 0; i < blogs.length; i++) {
-      if (blogs[i].id == req.params.id) {
-        blogs[i] = req.body
-      }
-    }
-    res.json(blogs)
-  })
-  
-  app.get("*", function (req, res) {
-    res.send("404")
-  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json({ msg: "an error occured", err });
+  });
+});
+
+router.get("*", function (req, res) {
+  res.send("404")
+})

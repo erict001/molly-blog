@@ -1,11 +1,9 @@
-const app = require('express').Router();
-const Blog = require('../models/blogs');
+const router = require('express').Router();
 
-app.get('/', function (req, res) {
-    // res.send('Hello Borld')
-    res.sendFile(path.join(__dirname, '/public/views/index.html'))
-})
+const homeRoutes = require('./frontEndRoutes');
+router.use('/', homeRoutes);
 
-app.get('/add-post', function (req, res) {
-    res.sendFile(path.join(__dirname, '/public/views/backend.html'))
-})
+const backendRoutes = require('./api');
+router.use("/api", backendRoutes);
+
+module.exports = router;
