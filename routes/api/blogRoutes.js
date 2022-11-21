@@ -2,8 +2,6 @@ const router = require('express').Router();
 const path = require("path");
 const { Blog } = require("../../models");
 
-
-
 // BACK END
 router.get("/", (req, res) => {
   Blog.findAll({include:[User, Comments]})
@@ -76,3 +74,5 @@ router.delete("/:id", (req, res) => {
 router.get("*", function (req, res) {
   res.send("404")
 })
+
+module.exports = router;
