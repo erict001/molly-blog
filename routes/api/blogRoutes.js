@@ -28,11 +28,13 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   Blog.create({
     title:req.body.title,
-    body:req.body.body,
-    UserId:req.session.user.id
+    blog_content:req.body.blog_content,
+    blog_description: req.body.blog_description,
+    author: req.body.author
   })
     .then(newBlog => {
       res.json(newBlog);
+      console.log(req)
     })
     .catch(err => {
       console.log(err);
