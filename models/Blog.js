@@ -21,7 +21,8 @@ Blog.init(
       type: DataTypes.STRING
     },
     author: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: true
     }
   },
   {

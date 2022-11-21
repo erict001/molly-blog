@@ -4,7 +4,7 @@ const { Blog } = require("../../models");
 
 // BACK END
 router.get("/", (req, res) => {
-  Blog.findAll({include:[User, Comments]})
+  Blog.findAll()
     .then(dbBlogs => {
       res.json(dbBlogs);
     })
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Blog.findByPk(req.params.id,{include:[User, Comments]})
+  Blog.findByPk(req.params.id)
     .then(dbBlog => {
       res.json(dbBlog);
     })
