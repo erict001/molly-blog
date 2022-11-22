@@ -1,4 +1,3 @@
-
 const bold = document.getElementById("bold")
 const blogContent = document.getElementById("blog-content")
 const blogDescription = document.getElementById("blog-description")
