@@ -1,4 +1,4 @@
-const router = require("express").Router();
+// const router = require("express").Router();
 
 const bold = document.getElementById("bold")
 const blogContent = document.getElementById("blog-content")
@@ -14,7 +14,7 @@ function boldText() {
 }
 
 
-pageChange.addEventListener("click", function () {
+pageChange.addEventListener("click", function() {
     location.href = "/"
 })
 
@@ -23,7 +23,6 @@ function addBlog(event) {
     event.preventDefault()
     //create new item using an object method
     let newBlog = {
-        id: crypto.randomUUID(),
         title: blogTitle.value.trim(),
         blog_content: blogContent.value.trim(),
         blog_description: blogDescription.value.trim()
@@ -49,4 +48,4 @@ function resetText() {
 
 submitBlog.addEventListener("click", addBlog)
 
-module.exports = router;
+// module.exports = router;
