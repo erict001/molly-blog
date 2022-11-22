@@ -6,7 +6,6 @@ const addBlogs = async () => {
   const blogs = await fetch('/api/blogs', {
     method: "GET",
   })
-
   const json = await blogs.json();
   console.log(json)
 
@@ -33,9 +32,9 @@ const addLi = (listEl) => {
   buttonDiv.className = "read-more";
 
   //adding text to element
-  h1.innerHTML = `${listEl.blogTitle}`;
+  h1.innerHTML = `${listEl.title}`;
   console.log(h1);
-  h2.innerText = `${listEl.blogDescription}`;
+  h2.innerText = `${listEl.blog_description}`;
   console.log(h2);
   createButton.textContent = "Read More"
 
