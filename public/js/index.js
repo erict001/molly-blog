@@ -1,5 +1,4 @@
-const router = require("express").Router();
-
+// const router = require("express").Router();
 const ul = document.querySelector("ul")
 
 //create function to run on page load
@@ -101,4 +100,4 @@ changePage.addEventListener("click", function () {
   location.href = "/add-post"
 })
 
-module.exports = router
+// module.exports = router

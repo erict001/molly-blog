@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const bold = document.getElementById("bold")
 const blogContent = document.getElementById("blog-content")
+const blogDescription = document.getElementById("blog-description")
 const pageChange = document.getElementById("pageChange")
 const blogTitle = document.getElementById("blog-title")
 const submitBlog = document.getElementById("submit")
@@ -24,7 +25,8 @@ function addBlog(event) {
     let newBlog = {
         id: crypto.randomUUID(),
         title: blogTitle.value.trim(),
-        body: blogContent.value.trim(),
+        blog_content: blogContent.value.trim(),
+        blog_description: blogDescription.value.trim()
     }
     //console.log using JSON stringify
     console.log(newBlog)
@@ -47,4 +49,4 @@ function resetText() {
 
 submitBlog.addEventListener("click", addBlog)
 
-module.exports = router
+module.exports = router;
