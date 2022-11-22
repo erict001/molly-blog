@@ -42,6 +42,7 @@ function addBlog(event) {
 function resetText() {
     blogTitle.value = ""
     blogContent.value = ""
+    blogDescription.value = ""
 }
 
 submitBlog.addEventListener("click", addBlog)

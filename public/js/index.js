@@ -12,6 +12,31 @@ const addBlogs = async () => {
   return json;
 }
 
+// const blogUrl = `/api/blogs/:id`
+
+
+function getBlogId() {
+  const blogUrl = `/api/blogs/:id`
+
+  fetch(blogUrl)
+  .then(function(){
+    location.href = `/${id}`
+    // return response.json();
+  })
+}
+
+// async function addComment(id) {
+//   try {
+//       // do stuff
+//       const res = await fetch(`/api/blogs/:id`, {
+//       })
+//           location.href = `/api/blogs/1`
+//   } catch (error) {
+//       console.error(error)
+//   }
+//   console.log(id);
+// };
+
 const addLi = (listEl) => {
   //grabbing html elements for card
   const listOne = document.createElement("li");
@@ -20,7 +45,7 @@ const addLi = (listEl) => {
   const image = document.createElement("image");
   const cardDivTwo = document.createElement("div");
   const h1 = document.createElement("h1");
-  const h2 = document.createElement("h2");
+  const h3 = document.createElement("h3");
   const createButton = document.createElement("button");
   const buttonDiv = document.createElement("div")
 
@@ -34,14 +59,15 @@ const addLi = (listEl) => {
   //adding text to element
   h1.innerHTML = `${listEl.title}`;
   console.log(h1);
-  h2.innerText = `${listEl.blog_description}`;
-  console.log(h2);
+  h3.innerHTML = `${listEl.blog_description}`;
+  console.log(h3);
   createButton.textContent = "Read More"
 
   //set button href attribute
-  createButton.setAttribute("href", "http://localhost:3000/api/blogs");
-  console.log(createButton.setAttribute("href", "http://localhost:3000/api/blogs"));
-  
+  createButton.addEventListener("click", function(){
+    location.href = `/${listEl.blog_id}`
+  })
+
   //append everything together
   ul.append(listOne);
   listOne.appendChild(cardDiv);
@@ -49,7 +75,7 @@ const addLi = (listEl) => {
   cardDivOne.appendChild(image);
   cardDiv.appendChild(cardDivTwo);
   cardDivTwo.appendChild(h1);
-  cardDivTwo.appendChild(h2);
+  cardDivTwo.appendChild(h3);
   cardDivTwo.appendChild(buttonDiv)
   buttonDiv.appendChild(createButton)
 }
