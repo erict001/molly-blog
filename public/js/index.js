@@ -12,30 +12,6 @@ const addBlogs = async () => {
   return json;
 }
 
-// const blogUrl = `/api/blogs/:id`
-
-
-function getBlogId() {
-  const blogUrl = `/api/blogs/:id`
-
-  fetch(blogUrl)
-  .then(function(){
-    location.href = `/${id}`
-    // return response.json();
-  })
-}
-
-// async function addComment(id) {
-//   try {
-//       // do stuff
-//       const res = await fetch(`/api/blogs/:id`, {
-//       })
-//           location.href = `/api/blogs/1`
-//   } catch (error) {
-//       console.error(error)
-//   }
-//   console.log(id);
-// };
 
 const addLi = (listEl) => {
   //grabbing html elements for card
@@ -82,15 +58,11 @@ const addLi = (listEl) => {
 
 
 function buttonHandler() {
-  addBlogs().then((response) => response.forEach((item) => addLi(item)));
+  addBlogs()
+  .then((response) => response.forEach((item) => addLi(item)));
 }
 
 buttonHandler()
-// addLi()
-//fetch request for /api/blogs
-//run a for loop
-//display on page
-//add styling to each instance 
 
 
 
