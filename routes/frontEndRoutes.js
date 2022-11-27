@@ -4,32 +4,24 @@ const { Blog } = require('../models');
 
 
 router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/views/index.html'))
+    Blog.findAll().then(blogs => {
+        const hbsBlogs = blogs.map(blog => blog.get({plain:true}))
+        res.render("home", {blogs: hbsBlogs})
+    })
+    // res.sendFile(path.join(__dirname, '../public/views/index.html'))
 })
 
 router.get('/add-post', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/views/backend.html'))
 })
 
-router.get('/:id', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/views/blogs.html'))
-})
-
-//localhost:3000/blog/:id
-router.get("/blog/:id", (req, res) => {
-    console.log(req.params.id)
-    Blog.findByPk(req.params.id,)
-      .then(dbBlog => {
+router.get("/:id", (req, res) => {
+    Blog.findByPk(req.params.id)
+    .then(dbBlog => {
         console.log("====================")
-        const blogData = dbBlog.get({plain:true})
-        console.log(blogData);
-        res.sendFile(path.join(__dirname, '../public/views/blogs.html'))
-    })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json({ msg: "an error occured", err });
-      });
-  });
+        res.render("blog", {blogs: dbBlog})
+        // res.render("comment", {blogs:blogData,loggedIn,username:req.session.user?.username})
+      })});
 
 
 module.exports = router;
