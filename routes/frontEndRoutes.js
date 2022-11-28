@@ -8,7 +8,6 @@ router.get('/', function (req, res) {
         const hbsBlogs = blogs.map(blog => blog.get({ plain: true }))
         res.render("home", { blogs: hbsBlogs })
     })
-    // res.sendFile(path.join(__dirname, '../public/views/index.html'))
 })
 
 router.get('/add-post', function (req, res) {
@@ -23,12 +22,7 @@ router.get("/:id", async (req, res) => {
     } catch (err) {
         res.status(500).json(err)
     }
-        // .then(dbBlog => {
-        //     console.log("====================")
-        //     const blogData = dbBlog.get({plain: true})
-        //     console.log(blogData)
 });
-// });
 
 
 module.exports = router;

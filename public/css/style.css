@@ -8,6 +8,10 @@
     list-style-type: none;
 }
 
+#blog-title {
+    color: green
+}
+
 .header {
     width: 100vw;
     display: flex;

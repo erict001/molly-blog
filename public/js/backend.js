@@ -21,9 +21,9 @@ function addBlog(event) {
     event.preventDefault()
     //create new item using an object method
     let newBlog = {
-        title: blogTitle.value.trim(),
-        blog_content: blogContent.value.trim(),
-        blog_description: blogDescription.value.trim()
+        title: blogTitle.value,
+        blog_content: blogContent.value,
+        blog_description: blogDescription.value
     }
     //console.log using JSON stringify
     console.log(newBlog)
