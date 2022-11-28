@@ -70,6 +70,8 @@
 #centered {
     display: flex;
     justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
 }
 
 #centered h1 {

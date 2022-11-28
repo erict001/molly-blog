@@ -11,7 +11,8 @@ router.get('/', function (req, res) {
 })
 
 router.get('/add-post', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/views/backend.html'))
+    res.render("backend")
+    // res.sendFile(path.join(__dirname, '../public/views/backend.html'))
 })
 
 router.get("/:id", async (req, res) => {

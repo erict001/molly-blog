@@ -30,6 +30,7 @@ router.post("/", (req, res) => {
     title:req.body.title,
     blog_content:req.body.blog_content,
     blog_description: req.body.blog_description,
+    // blog_image: req.body.blog_image,
     author: req.body.author
   })
     .then(newBlog => {

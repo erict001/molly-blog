@@ -20,6 +20,9 @@ Blog.init(
     blog_description: {
       type: DataTypes.STRING
     },
+    // blog_image: {
+    //   type: DataTypes.STRING
+    // },
     author: {
       type: DataTypes.STRING,
       allowNull: true
