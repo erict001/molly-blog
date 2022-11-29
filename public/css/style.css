@@ -42,11 +42,11 @@
 }
 
 #food {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+    /* width: 100vw; */
     background-image: url("../images/food.png");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin-top: -3.5rem;
     z-index: -1;
     height: 50vh;
