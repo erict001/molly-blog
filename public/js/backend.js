@@ -1,6 +1,6 @@
 const uploader = Uploader({
     apiKey: "free"
-  });
+});
 
 const bold = document.getElementById("bold")
 const blogContent = document.getElementById("blog-content")
@@ -10,6 +10,9 @@ const blogTitle = document.getElementById("blog-title")
 const submitBlog = document.getElementById("submit")
 const media = document.getElementById("add-media")
 
+const imageUrl = []
+
+
 bold.addEventListener("click", boldText)
 
 function boldText() {
@@ -18,19 +21,27 @@ function boldText() {
 
 
 function addMedia() {
-    uploader.open({ maxFileCount: 10 })
-    .then(
-        files => alert(files.length === 0 
-                       ? "No files selected." 
-                       : `Files uploaded:\n\n${files.map(x => x.fileUrl).join("\n")}`),
-        error => alert(error)
-      );  
+    uploader.open({ multi: true }).then(files => {
+        if (files.length === 0) {
+            console.log('No files selected.')
+        } else {
+            console.log('Files uploaded:');
+            console.log(files.map(f => f.fileUrl));
+            imageUrl.push(files[0].fileUrl);
+            console.log(imageUrl)
+        }
+    }).catch(err => {
+        console.error(err);
+    });
 }
+
+
+
 
 media.addEventListener("click", addMedia)
 
 
-pageChange.addEventListener("click", function() {
+pageChange.addEventListener("click", function () {
     location.href = "/"
 })
 
