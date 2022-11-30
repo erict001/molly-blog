@@ -13,6 +13,7 @@ const media = document.getElementById("add-media")
 const imageUrl = []
 console.log(imageUrl)
 
+const fileUrl = imageUrl[0]
 
 bold.addEventListener("click", boldText)
 
@@ -29,7 +30,8 @@ function addMedia() {
             console.log('Files uploaded:');
             console.log(files.map(f => f.fileUrl));
             imageUrl.push(files[0].fileUrl);
-            console.log(imageUrl)
+            console.log(typeof imageUrl)
+            console.log(typeof imageUrl[0])
             // for (let i = 0; i < files.length; i++){
             //     imageUrl.push(files[i].fileUrl);
             //     console.log(imageUrl)  

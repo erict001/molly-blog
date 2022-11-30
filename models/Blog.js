@@ -21,7 +21,7 @@ Blog.init(
       type: DataTypes.STRING
     },
     blog_image: {
-      type: DataTypes.STRING
+      type: DataTypes.CHAR
     },
     author: {
       type: DataTypes.STRING,

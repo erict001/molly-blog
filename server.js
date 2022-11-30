@@ -16,7 +16,7 @@ app.use(express.static('public'));
 //allows the app to use JSON data
 app.use(express.json())
 //This middleware will parse that string into an object containing key value pairs
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ limit: '100mb', extended: true }));
 
 
 const db = mysql.createConnection(

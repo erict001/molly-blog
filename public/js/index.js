@@ -33,7 +33,7 @@ const addLi = (listEl) => {
   buttonDiv.className = "read-more";
 
   //adding text to element
-  image.setAttribute("href", `${listEl.blog_image}`)
+  image.setAttribute("src", `${listEl.blog_image}`)
   h1.innerHTML = `${listEl.title}`;
   console.log(h1);
   h3.innerHTML = `${listEl.blog_description}`;
