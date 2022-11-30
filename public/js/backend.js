@@ -1,15 +1,33 @@
+const uploader = Uploader({
+    apiKey: "free"
+  });
+
 const bold = document.getElementById("bold")
 const blogContent = document.getElementById("blog-content")
 const blogDescription = document.getElementById("blog-description")
 const pageChange = document.getElementById("pageChange")
 const blogTitle = document.getElementById("blog-title")
 const submitBlog = document.getElementById("submit")
+const media = document.getElementById("add-media")
 
 bold.addEventListener("click", boldText)
 
 function boldText() {
     blogContent.style.fontWeight = "bold"
 }
+
+
+function addMedia() {
+    uploader.open({ maxFileCount: 10 })
+    .then(
+        files => alert(files.length === 0 
+                       ? "No files selected." 
+                       : `Files uploaded:\n\n${files.map(x => x.fileUrl).join("\n")}`),
+        error => alert(error)
+      );  
+}
+
+media.addEventListener("click", addMedia)
 
 
 pageChange.addEventListener("click", function() {

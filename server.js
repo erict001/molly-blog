@@ -5,8 +5,11 @@ const path = require('path')
 const sequelize = require('./config/connection.js');
 const routes = require('./routes');
 const mysql = require('mysql2');
+const Uploader = require("uploader");
 
 const port = 3000
+
+
 
 // Static directory
 app.use(express.static('public'));
