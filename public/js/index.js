@@ -18,7 +18,7 @@ const addLi = (listEl) => {
   const listOne = document.createElement("li");
   const cardDiv = document.createElement("div");
   const cardDivOne = document.createElement("div");
-  const image = document.createElement("image");
+  const image = document.createElement("img");
   const cardDivTwo = document.createElement("div");
   const h1 = document.createElement("h1");
   const h3 = document.createElement("h3");
@@ -33,7 +33,7 @@ const addLi = (listEl) => {
   buttonDiv.className = "read-more";
 
   //adding text to element
-  // image.setAttribute("href", "./images/3d.png")
+  image.setAttribute("href", `${listEl.blog_image}`)
   h1.innerHTML = `${listEl.title}`;
   console.log(h1);
   h3.innerHTML = `${listEl.blog_description}`;

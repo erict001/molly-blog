@@ -11,6 +11,7 @@ const submitBlog = document.getElementById("submit")
 const media = document.getElementById("add-media")
 
 const imageUrl = []
+console.log(imageUrl)
 
 
 bold.addEventListener("click", boldText)
@@ -29,14 +30,15 @@ function addMedia() {
             console.log(files.map(f => f.fileUrl));
             imageUrl.push(files[0].fileUrl);
             console.log(imageUrl)
+            // for (let i = 0; i < files.length; i++){
+            //     imageUrl.push(files[i].fileUrl);
+            //     console.log(imageUrl)  
+            // }
         }
     }).catch(err => {
         console.error(err);
     });
 }
-
-
-
 
 media.addEventListener("click", addMedia)
 
@@ -52,7 +54,8 @@ function addBlog(event) {
     let newBlog = {
         title: blogTitle.value,
         blog_content: blogContent.value,
-        blog_description: blogDescription.value
+        blog_description: blogDescription.value,
+        blog_image: imageUrl[0],
     }
     //console.log using JSON stringify
     console.log(newBlog)
