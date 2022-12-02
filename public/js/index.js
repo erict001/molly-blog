@@ -30,7 +30,7 @@ const addLi = (listEl) => {
   cardDivOne.className = "card-div1";
   image.className = "image";
   cardDivTwo.className = "card-div2";
-  buttonDiv.className = "read-more";
+  buttonDiv.classList.add("read-more");
 
   //adding text to element
   image.setAttribute("src", `${listEl.blog_image}`)
@@ -48,12 +48,11 @@ const addLi = (listEl) => {
   //append everything together
   ul.append(listOne);
   listOne.appendChild(cardDiv);
-  cardDiv.appendChild(cardDivOne);
-  cardDivOne.appendChild(image);
-  cardDiv.appendChild(cardDivTwo);
-  cardDivTwo.appendChild(h1);
-  cardDivTwo.appendChild(h3);
+  cardDivOne.append(image);
+  cardDivTwo.append(h1, h3);
   cardDivTwo.appendChild(buttonDiv)
+  cardDiv.append(cardDivOne, cardDivTwo);
+  // cardDiv.appendChild(cardDivTwo);
   buttonDiv.appendChild(createButton)
 }
 

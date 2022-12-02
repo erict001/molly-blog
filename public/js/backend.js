@@ -13,8 +13,6 @@ const media = document.getElementById("add-media")
 const imageUrl = []
 console.log(imageUrl)
 
-const fileUrl = imageUrl[0]
-
 bold.addEventListener("click", boldText)
 
 function boldText() {
