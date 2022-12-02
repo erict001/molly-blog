@@ -34,6 +34,7 @@ const addLi = (listEl) => {
 
   //adding text to element
   image.setAttribute("src", `${listEl.blog_image}`)
+  // cardDivOne.style.backgroundImage = `url(${listEl.blog_image})`;
   h1.innerHTML = `${listEl.title}`;
   console.log(h1);
   h3.innerHTML = `${listEl.blog_description}`;
