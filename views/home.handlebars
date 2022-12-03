@@ -1,4 +1,25 @@
 <div>
+    <div style="display:flex; margin-top: 3rem">
+        <div style="width:60%;">
+            <h1 style="display: flex; justify-content: center">About Me</h1>
+        </div>
+        <div style="width:40%; ">
+            <div style="display:flex; justify-content: center">
+                <h1>Recipes</h1>
+            </div>
+            {{#each blogs}}
+            <div>
+                <ul style="text-align: center; list-style: none">
+                    <li>
+                        <a href="/{{blog_id}}">
+                            <h2>{{title}}</h2>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+    </div>
     {{!-- <ul class="unorderedList"> --}}
         <ul>
             {{#each blogs}}
