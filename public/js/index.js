@@ -30,11 +30,10 @@ const addLi = (listEl) => {
   cardDivOne.className = "card-div1";
   image.className = "image";
   cardDivTwo.className = "card-div2";
-  buttonDiv.classList.add("read-more");
+  buttonDiv.className = "read-more";
 
   //adding text to element
   image.setAttribute("src", `${listEl.blog_image}`)
-  // cardDivOne.style.backgroundImage = `url(${listEl.blog_image})`;
   h1.innerHTML = `${listEl.title}`;
   console.log(h1);
   h3.innerHTML = `${listEl.blog_description}`;
