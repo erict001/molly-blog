@@ -1,6 +1,26 @@
 <div>
-    <ul class="unorderedList">
-    </ul>
+    {{!-- <ul class="unorderedList"> --}}
+        <ul>
+            {{#each blogs}}
+            <div class="card">
+                <div class="card-div1">
+                    <img class="image" src="{{blog_image}}" />
+                </div>
+                <div class="card-div2">
+                    <h1>{{title}}</h1>
+                    <h3>{{blog_description}}</h3>
+                    <div class="read-more">
+                        <button>Read More</button>
+                        {{#if loggedIn}}
+                        <button>Edit Blog</button>
+                        <button>Delete Blog</button>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <hr>
+            {{/each}}
+        </ul>
 </div>
 <footer class="footer">
     {{#if loggedIn}}
@@ -12,10 +32,6 @@
     <button id="myBtn"><a>Login</a></button>
     <button id="redirect">Redirect</button>
     {{/if}}
-    {{!-- <div>
-        <button id="myBtn"><a>Admin</a></button>
-        <button id="redirect">Redirect</button>
-    </div> --}}
     <!-- Modal -->
     <div id="myModal" class="modal">
         <!-- Modal content -->
