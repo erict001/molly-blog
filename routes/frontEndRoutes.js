@@ -6,14 +6,16 @@ const { Blog } = require('../models');
 router.get('/', function (req, res) {
     Blog.findAll().then(blogs => {
         const hbsBlogs = blogs.map(blog => blog.get({ plain: true }))
+        // const loggedIn = req.session.user ? true:false
         res.render("home", { blogs: hbsBlogs })
+        // res.render("home", { blogs: hbsBlogs, loggedIn, username:req.session.user?.username })
+
     })
-})
+});
 
 router.get('/add-post', function (req, res) {
     res.render("backend")
-    // res.sendFile(path.join(__dirname, '../public/views/backend.html'))
-})
+});
 
 router.get("/:id", async (req, res) => {
     try {
