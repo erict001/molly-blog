@@ -1,23 +1,43 @@
 <div>
-    <div style="display:flex; margin-top: 3rem">
-        <div style="width:60%;">
-            <h1 style="display: flex; justify-content: center">About Me</h1>
-        </div>
-        <div style="width:40%; ">
-            <div style="display:flex; justify-content: center">
-                <h1>Recipes</h1>
+    <div style="display:flex; height: max-content; margin-top: 3rem; margin-bottom: 5rem">
+        <div style="display: flex">
+            <div style="width: 40%; text-align: center">
+                <h1>IMAGE HERE</h1>
             </div>
-            {{#each blogs}}
-            <div>
-                <ul style="text-align: center; list-style: none">
-                    <li>
-                        <a href="/{{blog_id}}">
-                            <h2>{{title}}</h2>
-                        </a>
-                    </li>
-                </ul>
+            <div style="display: flex; flex-direction: column; width: 60%">
+                <h1 style="text-align: center; font-size: 50px">About Me</h1>
+                {{!--
+                <hr> --}}
+            <div style="margin-left:3rem; width: 90%">
+                <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Vivamus at augue eget arcu dictum varius duis at. Massa ultricies mi quis
+                    hendrerit dolor magna eget est lorem. Amet nisl suscipit adipiscing bibendum est ultricies. Varius
+                    vel pharetra vel turpis nunc eget lorem dolor sed. Lorem ipsum dolor sit amet. Mus mauris vitae
+                    ultricies leo integer malesuada. Faucibus ornare suspendisse sed nisi. Sed elementum tempus egestas
+                    sed sed risus pretium quam. Pellentesque adipiscing commodo elit at imperdiet. Eu mi bibendum neque
+                    egestas congue.
+                </h3>
+                <br>
+                <p>
+                    Vel facilisis volutpat est velit egestas dui id ornare arcu. Diam maecenas sed enim ut sem viverra
+                    aliquet eget. Morbi leo urna molestie at. Malesuada fames ac turpis egestas. Eget mauris pharetra et
+                    ultrices. In ornare quam viverra orci sagittis eu volutpat. Ultrices tincidunt arcu non sodales
+                    neque sodales ut. Vulputate ut pharetra sit amet. Tincidunt id aliquet risus feugiat. Placerat
+                    vestibulum lectus mauris ultrices eros in cursus turpis. Viverra mauris in aliquam sem fringilla ut
+                    morbi.
+                </p>
+                <br>
+                <p>
+                    Ut consequat semper viverra nam libero justo laoreet sit amet. Euismod nisi porta lorem mollis. Diam
+                    maecenas ultricies mi eget mauris. Imperdiet proin fermentum leo vel orci. Id porta nibh venenatis
+                    cras sed felis eget velit. Pretium lectus quam id leo in vitae turpis. Curabitur vitae nunc sed
+                    velit dignissim sodales ut eu. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit
+                    amet. Consequat interdum varius sit amet. Amet nisl purus in mollis nunc sed id semper. Ultrices
+                    eros in cursus turpis massa tincidunt dui.
+                </p>
             </div>
-            {{/each}}
+            </div>
         </div>
     </div>
     {{!-- <ul class="unorderedList"> --}}
@@ -31,7 +51,7 @@
                     <h1>{{title}}</h1>
                     <h3>{{blog_description}}</h3>
                     <div class="read-more">
-                        <a href="/{{blog_id}}"><button>Read More</button></a>
+                        <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
                         {{#if loggedIn}}
                         <button>Edit Blog</button>
                         <button>Delete Blog</button>
@@ -48,10 +68,12 @@
     <a href="/">Home</a>
     <a href="/profile">Dashboard</a>
     <a href="/api/users/logout">Logout</a>
+    <button id="redirect">Add a Post</button>
+
     <h1>Tech Blog</h1>
     {{else}}
     <button id="myBtn">Login</button>
-    <button id="redirect">Redirect</button>
+    <button id="redirect">Add a Post</button>
     {{/if}}
     <!-- Modal -->
     <div id="myModal" class="modal">
@@ -71,7 +93,7 @@
                     </div>
                     <button>Submit</button>
                 </div>
-                <div>
+                {{!-- <div>
                     <h3>Signup: </h3>
                     <div>
                         <label>Username: </label>
@@ -82,7 +104,7 @@
                         <input type="password" placeholder="username">
                     </div>
                     <button>Submit</button>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -15,10 +15,10 @@ Blog.init(
       type: DataTypes.STRING
     },
     blog_content: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     blog_description: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     blog_image: {
       type: DataTypes.CHAR

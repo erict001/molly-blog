@@ -24,6 +24,7 @@
     "express-handlebars": "^6.0.6",
     "mysql2": "^2.3.3",
     "sequelize": "^6.25.8",
+    "swup": "^2.0.19",
     "uploader": "^2.2.2"
   }
 }

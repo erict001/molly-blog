@@ -1,9 +1,9 @@
-// const User = require("./User");
+const User = require("./User");
 const Blog = require("./Blog");
 // const Comments = require("./Comments")
 
-// User.hasMany(Blog);
-// Blog.belongsTo(User);
+User.hasMany(Blog);
+Blog.belongsTo(User);
 
 // User.hasMany(Comments);
 // Comments.belongsTo(User);
@@ -13,7 +13,7 @@ const Blog = require("./Blog");
 
 
 module.exports = {
-    // User,
+    User,
     Blog,
     // Comments
 }
