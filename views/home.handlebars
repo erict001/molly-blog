@@ -54,28 +54,31 @@
             </div>
         </div>
     </div>
-    {{!-- <ul class="unorderedList"> --}}
-        <ul>
-            {{#each blogs}}
-            <div class="card">
-                <div class="card-div1">
-                    <img class="image" src="{{blog_image}}" />
-                </div>
-                <div class="card-div2">
-                    <h1>{{title}}</h1>
-                    <h3>{{blog_description}}</h3>
-                    <div class="read-more">
-                        <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
-                        {{#if loggedIn}}
-                        <button>Edit Blog</button>
-                        <button>Delete Blog</button>
-                        {{/if}}
-                    </div>
+    <div id="subscribe">
+        <h1 style="margin-right: 1rem">Subscribe</h1>
+        <button style="width: max-content; height: max-content; padding: 10px">Subscribe here!</button>
+    </div>
+    <ul>
+        {{#each blogs}}
+        <div class="card">
+            <div class="card-div1">
+                <img class="image" src="{{blog_image}}" />
+            </div>
+            <div class="card-div2">
+                <h1>{{title}}</h1>
+                <h3>{{blog_description}}</h3>
+                <div class="read-more">
+                    <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
+                    {{#if loggedIn}}
+                    <button>Edit Blog</button>
+                    <button>Delete Blog</button>
+                    {{/if}}
                 </div>
             </div>
-            <hr>
-            {{/each}}
-        </ul>
+        </div>
+        <hr>
+        {{/each}}
+    </ul>
 </div>
 <footer class="footer">
     {{#if loggedIn}}

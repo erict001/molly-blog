@@ -1,5 +1,6 @@
 * {
     font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 #places {
@@ -47,6 +48,22 @@ nav h1 {
     color: green
 }
 
+#subscribe {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    background-color: rgb(196, 219, 212); 
+    height: 20vh; width: 100vw; 
+    padding-top: 1rem; 
+    padding-bottom: 2rem;
+}
+
+#subscribe h1 {
+    text-transform: uppercase;
+    margin: 1rem;
+}
+
 .header {
     margin-top: 15vh;
     width: 100vw;
@@ -82,7 +99,7 @@ nav h1 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 50px;
+    margin-top: -50px;
     z-index: -1;
     height: 50vh;
 
