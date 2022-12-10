@@ -10,7 +10,7 @@
             </div>
             <div style="display: flex; flex-direction: column; width: 60%">
                 <h1 style="text-align: center; font-size: 50px">About Me</h1>
-                <div style="margin-left:3rem; width: 90%">
+                <div style="margin-left:3rem; width: 90%; text-align: center">
                     <h3>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
@@ -26,28 +26,6 @@
                         egestas congue.
                     </h3>
                     <br>
-                    <p>
-                        Vel facilisis volutpat est velit egestas dui id ornare arcu. Diam maecenas sed enim ut sem
-                        viverra
-                        aliquet eget. Morbi leo urna molestie at. Malesuada fames ac turpis egestas. Eget mauris
-                        pharetra et
-                        ultrices. In ornare quam viverra orci sagittis eu volutpat. Ultrices tincidunt arcu non sodales
-                        neque sodales ut. Vulputate ut pharetra sit amet. Tincidunt id aliquet risus feugiat. Placerat
-                        vestibulum lectus mauris ultrices eros in cursus turpis. Viverra mauris in aliquam sem fringilla
-                        ut
-                        morbi.
-                    </p>
-                    <br>
-                    <p>
-                        Ut consequat semper viverra nam libero justo laoreet sit amet. Euismod nisi porta lorem mollis.
-                        Diam
-                        maecenas ultricies mi eget mauris. Imperdiet proin fermentum leo vel orci. Id porta nibh
-                        venenatis
-                        cras sed felis eget velit. Pretium lectus quam id leo in vitae turpis. Curabitur vitae nunc sed
-                        velit dignissim sodales ut eu. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit
-                        amet. Consequat interdum varius sit amet. Amet nisl purus in mollis nunc sed id semper. Ultrices
-                        eros in cursus turpis massa tincidunt dui.
-                    </p>
                 </div>
             </div>
         </div>
@@ -56,27 +34,26 @@
         <h1 style="margin-right: 1rem">Subscribe</h1>
         <button style="width: max-content; height: max-content; padding: 10px">Subscribe here!</button>
     </div>
-    <ul>
-        {{#each blogs}}
-        <div class="card">
-            <div class="card-div1">
-                <img class="image" src="{{blog_image}}" />
-            </div>
-            <div class="card-div2">
-                <h1>{{title}}</h1>
-                <h3>{{blog_description}}</h3>
-                <div class="read-more">
-                    <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
-                    {{#if loggedIn}}
-                    <button>Edit Blog</button>
-                    <button>Delete Blog</button>
-                    {{/if}}
-                </div>
-            </div>
+</div>
+<div>
+    <section style="display: flex; justify-content: space-around; height: 40vh">
+        <div>
+            <h2>Recipes</h2>
+            <button>Recipes</button>
         </div>
-        <hr>
-        {{/each}}
-    </ul>
+        <div>
+            <h2>Recipes Image</h2>
+        </div>
+    </section>
+    <section style="display: flex; justify-content: space-around; height: 40vh">
+        <div>
+            <h2>Image</h2>
+        </div>
+        <div>
+            <h2>Lifestyle Articles</h2>
+            <button>Articles</button>
+        </div>
+    </section>
 </div>
 <footer class="footer">
     {{#if loggedIn}}

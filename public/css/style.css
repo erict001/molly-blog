@@ -28,12 +28,12 @@ nav h1 {
 }
 
 #circle {
+    background-image: url('../images/logo1.png');
+    background-position: 40%;
+    background-size: auto;
     display: inline-block;
-    height: 225px;
-    width: 225px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 240px;
+    width: 240px;
     border: 4px solid black;
     margin: 10px;
     border-radius: 50%;
