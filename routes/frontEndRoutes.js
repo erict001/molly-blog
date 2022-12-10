@@ -3,7 +3,7 @@ const path = require("path");
 const { Blog } = require('../models');
 
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     Blog.findAll().then(blogs => {
         const hbsBlogs = blogs.map(blog => blog.get({ plain: true }))
         // const loggedIn = req.session.user ? true:false
@@ -13,7 +13,12 @@ router.get('/', function (req, res) {
     })
 });
 
-router.get('/add-post', function (req, res) {
+router.get('/add-post', (req, res) => {
+    res.render('backend')
+});
+
+router.get("/about", (req, res) => {
+    // res.send("Hello World")
     res.render("backend")
 });
 
