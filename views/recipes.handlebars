@@ -1,21 +1,23 @@
-<ul>
-    {{#each blogs}}
-    <div class="card">
-        <div class="card-div1">
-            <img class="image" src="{{blog_image}}" />
-        </div>
-        <div class="card-div2">
-            <h1>{{title}}</h1>
-            <h3>{{blog_description}}</h3>
-            <div class="read-more">
-                <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
-                {{#if loggedIn}}
-                <button>Edit Blog</button>
-                <button>Delete Blog</button>
-                {{/if}}
+<div class="bigBody">
+    <ul>
+        {{#each blogs}}
+        <div class="card">
+            <div class="card-div1">
+                <img class="image" src="{{blog_image}}" />
+            </div>
+            <div class="card-div2">
+                <h1>{{title}}</h1>
+                <h3>{{blog_description}}</h3>
+                <div class="read-more">
+                    <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
+                    {{#if loggedIn}}
+                    <button>Edit Blog</button>
+                    <button>Delete Blog</button>
+                    {{/if}}
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-    {{/each}}
-</ul>
+        <hr>
+        {{/each}}
+    </ul>
+</div>

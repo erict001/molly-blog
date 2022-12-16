@@ -3,6 +3,10 @@
     height: 2rem;
 }
 
+.bigBody {
+    margin-top: 25vh;
+}
+
 .new-blog div{
     margin-top: 0.3rem;
 }

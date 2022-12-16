@@ -3,11 +3,7 @@ const uploader = Uploader({
 });
 
 const bold = document.getElementById("bold")
-const blogContent = document.getElementById("blog-content_1")
-const blogContent2 = document.getElementById("blog-content_2")
-const blogContent3 = document.getElementById("blog-content_3")
-const blogContent4 = document.getElementById("blog-content_4")
-const blogContent5 = document.getElementById("blog-content_5")
+const blogContent = document.getElementById("blog-content")
 const blogDescription = document.getElementById("blog-description")
 const pageChange = document.getElementById("pageChange")
 const blogTitle = document.getElementById("blog-title")
@@ -59,11 +55,7 @@ function addBlog(event) {
     //create new item using an object method
     let newBlog = {
         title: blogTitle.value,
-        blog_content_1: blogContent.value,
-        blog_content_2: blogContent2.value,
-        blog_content_3: blogContent3.value,
-        blog_content_4: blogContent4.value,
-        blog_content_5: blogContent5.value,
+        blog_content: blogContent.value,
         blog_description: blogDescription.value,
         blog_image: imageUrl[0],
     }
