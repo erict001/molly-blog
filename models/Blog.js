@@ -14,11 +14,26 @@ Blog.init(
     title: {
       type: DataTypes.STRING
     },
-    blog_content: {
-      type: DataTypes.TEXT
+    blog_content_1: {
+      type: DataTypes.STRING
+    },
+    blog_content_2: {
+      type: DataTypes.STRING
+    },
+    blog_content_3: {
+      type: DataTypes.STRING
+    },
+    blog_content_4: {
+      type: DataTypes.STRING
+    },
+    blog_content_5: {
+      type: DataTypes.STRING
+    },
+    blog_content_6: {
+      type: DataTypes.STRING
     },
     blog_description: {
-      type: DataTypes.TEXT
+      type: DataTypes.STRING
     },
     blog_image: {
       type: DataTypes.CHAR

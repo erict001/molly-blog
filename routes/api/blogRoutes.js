@@ -28,7 +28,12 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   Blog.create({
     title:req.body.title,
-    blog_content:req.body.blog_content,
+    blog_content_1:req.body.blog_content_1,
+    blog_content_2:req.body.blog_content_2,
+    blog_content_3:req.body.blog_content_3,
+    blog_content_4:req.body.blog_content_4,
+    blog_content_5:req.body.blog_content_5,
+    blog_content_6:req.body.blog_content_6,
     blog_description: req.body.blog_description,
     blog_image: req.body.blog_image,
     author: req.body.author
