@@ -1,5 +1,10 @@
 // const router = require("express").Router();
 const ul = document.querySelector("ul")
+const circle = document.getElementById("circle")
+
+circle.addEventListener("click", function () {
+  location.href = "/"
+})
 
 //create function to run on page load
 const addBlogs = async () => {
@@ -41,7 +46,7 @@ const addLi = (listEl) => {
   createButton.textContent = "Read More"
 
   //set button href attribute
-  createButton.addEventListener("click", function(){
+  createButton.addEventListener("click", function () {
     location.href = `/${listEl.blog_id}`
   })
 
@@ -59,7 +64,7 @@ const addLi = (listEl) => {
 
 function buttonHandler() {
   addBlogs()
-  .then((response) => response.forEach((item) => addLi(item)));
+    .then((response) => response.forEach((item) => addLi(item)));
 }
 
 buttonHandler()
