@@ -31,7 +31,6 @@ function changeText() {
    console.log(textFamily)
 //change the style to the variable 
     blogContent.style.fontFamily = fontArray[textFamily]
-
 }
 
 changeText()
