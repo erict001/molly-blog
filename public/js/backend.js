@@ -10,7 +10,11 @@ const blogTitle = document.getElementById("blog-title")
 const submitBlog = document.getElementById("submit")
 const media = document.getElementById("add-media")
 const text = document.getElementById("addText")
+const fontSize = document.getElementById("font-size")
+const fontFamily = document.getElementById("font-families")
+const fontChange = document.getElementById("changeText")
 
+const fontArray = ["arial", "verdana", "tahoma", "times-new-roman", "courier-new"]
 
 const imageUrl = []
 console.log(imageUrl)
@@ -21,6 +25,16 @@ function boldText() {
     blogContent.style.fontWeight = "bold"
 }
 
+function changeText() {
+//create a variable that grabs the fontFamily selected index
+   const textFamily = fontFamily.value
+   console.log(textFamily)
+//change the style to the variable 
+    blogContent.style.fontFamily = fontArray[textFamily]
+
+}
+
+changeText()
 
 function addMedia() {
     uploader.open({ multi: true }).then(files => {
