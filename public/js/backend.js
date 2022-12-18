@@ -27,13 +27,13 @@ function boldText() {
 
 function changeText() {
 //create a variable that grabs the fontFamily selected index
-   const textFamily = fontFamily.value
+   const textFamily = fontFamily.selectedIndex
    console.log(textFamily)
 //change the style to the variable 
     blogContent.style.fontFamily = fontArray[textFamily]
 }
 
-changeText()
+fontChange.addEventListener("click", changeText)
 
 function addMedia() {
     uploader.open({ multi: true }).then(files => {

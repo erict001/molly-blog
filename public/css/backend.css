@@ -1,3 +1,7 @@
+body {
+    margin-left: 1vw
+}
+
 #blog-title {
     width: 80%;
     height: 2rem;
@@ -48,4 +52,11 @@
 
 #bold:active {
     background-color: aqua;
+}
+
+#box {
+    height: 50vh;
+    width: 80vw;
+    border: 1px solid black;
+    margin-left: 1vw;
 }
