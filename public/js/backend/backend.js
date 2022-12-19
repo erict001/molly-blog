@@ -2,40 +2,43 @@ const uploader = Uploader({
     apiKey: "free"
 });
 
-const bold = document.getElementById("bold")
+// grabbing blog values
+const blogTitle = document.getElementById("blog-title")
 const blogContent = document.getElementById("blog-content")
 const blogDescription = document.getElementById("blog-description")
-const pageChange = document.getElementById("pageChange")
-const blogTitle = document.getElementById("blog-title")
-const submitBlog = document.getElementById("submit")
+
+// add media to SQL database
 const media = document.getElementById("add-media")
-const text = document.getElementById("addText")
+
+//STYLING blog_content_1
+
+//text decoration
+const bold = document.getElementById("bold")
+const italic = document.getElementById("italic")
+const underline = document.getElementById("underline")
+//font changes
 const fontSize = document.getElementById("font-size")
 const fontFamily = document.getElementById("font-families")
 const fontChange = document.getElementById("changeText")
 
+// allows us to change value of blog content
 const fontArray = ["arial", "verdana", "tahoma", "times-new-roman", "courier-new"]
 
+const pageChange = document.getElementById("pageChange")
+const submitBlog = document.getElementById("submit")
+
+
+const text = document.getElementById("addText")
+
+
+//DOWNLOAD IMAGE URL FROM AWS FROM LOCAL MACHINE
+
+//
 const imageUrl = []
 console.log(imageUrl)
 
-bold.addEventListener("click", boldText)
-
-function boldText() {
-    blogContent.style.fontWeight = "bold"
-}
-
-function changeText() {
-//create a variable that grabs the fontFamily selected index
-   const textFamily = fontFamily.selectedIndex
-   console.log(textFamily)
-//change the style to the variable 
-    blogContent.style.fontFamily = fontArray[textFamily]
-}
-
-fontChange.addEventListener("click", changeText)
-
-function addMedia() {
+//event listener to activate button
+media.addEventListener("click", function(){
     uploader.open({ multi: true }).then(files => {
         if (files.length === 0) {
             console.log('No files selected.')
@@ -53,9 +56,53 @@ function addMedia() {
     }).catch(err => {
         console.error(err);
     });
+})
+
+//BLOG CONTENT ONE STYLING
+function changeBlogContentOne(){
+   //TEXT DECORATION
+    //Bold text
+    bold.addEventListener("click", function(){
+        blogContent.style.fontWeight = "bold"
+    })
+
+    bold.addEventListener("dblclick", function(){
+        blogContent.style = "font-style: normal"
+    })
+
+    //Italicize text
+    italic.addEventListener("click", function(){
+        blogContent.style = "font-style: italic"
+    })
+
+    italic.addEventListener("dblclick", function(){
+        blogContent.style = "font-style: normal"
+    })
+
+    //Underline text
+    underline.addEventListener("click", function(){
+        blogContent.style = "text-decoration-line: underline"
+    })
+
+    underline.addEventListener("dblclick", function(){
+        blogContent.style = "font-style: normal"
+    })
+
+
+    //font change
+    fontChange.addEventListener("click", function(){
+        const textFamily = fontFamily.selectedIndex
+        console.log(textFamily)
+        //change the style to the variable 
+         blogContent.style.fontFamily = fontArray[textFamily]
+    })
 }
 
-media.addEventListener("click", addMedia)
+changeBlogContentOne()
+
+
+
+
 
 
 pageChange.addEventListener("click", function () {
