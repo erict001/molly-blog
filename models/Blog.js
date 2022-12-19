@@ -17,6 +17,27 @@ Blog.init(
     blog_content: {
       type: DataTypes.STRING
     },
+    blog_content_style: {
+      type: DataTypes.STRING
+    },
+    blog_content_2: {
+      type: DataTypes.STRING
+    },
+    blog_content_2_style: {
+      type: DataTypes.STRING
+    },
+    blog_content_3: {
+      type: DataTypes.STRING
+    },
+    blog_content_3_style: {
+      type: DataTypes.STRING
+    },
+    blog_content_4: {
+      type: DataTypes.STRING
+    },
+    blog_content_4_style: {
+      type: DataTypes.STRING
+    },
     blog_description: {
       type: DataTypes.STRING
     },

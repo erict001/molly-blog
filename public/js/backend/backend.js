@@ -82,6 +82,7 @@ function addBlog(event) {
         },
         body: JSON.stringify(newBlog)
     })
+    location.href = "/"
     resetText()
     //run function to display to page
 }
