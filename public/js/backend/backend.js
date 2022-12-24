@@ -6,6 +6,9 @@ const uploader = Uploader({
 const blogTitle = document.getElementById("blog-title")
 const blogContent = document.getElementById("blog-content")
 const blogDescription = document.getElementById("blog-description")
+const blogContent1 = document.getElementById("blog-content-1")
+const blogContent2 = document.getElementById("blog-content-2")
+const blogContent3 = document.getElementById("blog-content-3")
 
 // add media to SQL database
 const media = document.getElementById("add-media")
@@ -155,6 +158,9 @@ function addBlog(event) {
     let newBlog = {
         title: blogTitle.value,
         blog_content: blogContent.value,
+        blog_content_1: blogContent1.value,
+        blog_content_2: blogContent2.value,
+        blog_content_3: blogContent3.value,
         blog_description: blogDescription.value,
         blog_image: imageUrl[0],
     }
@@ -177,6 +183,9 @@ function addBlog(event) {
 function resetText() {
     blogTitle.value = ""
     blogContent.value = ""
+    blogContent1.value = ""
+    blogContent2.value = ""
+    blogContent3.value = ""
     blogDescription.value = ""
 }
 
