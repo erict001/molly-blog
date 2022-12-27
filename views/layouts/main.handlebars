@@ -5,24 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    {{!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> --}}
     <link rel="stylesheet" type="text/css" href="css/backend.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script src="https://js.upload.io/uploader/v2"></script>
     <title>Molly Blog</title>
 </head>
 
 <body>
     <header>
-        <nav>
-            <a href="/about"><h1>About Us</h1></a>
-            <a href="/recipes"><h1>Recipes</h1></a>
-            <a href="/"><button id="circle"></button></a>
-            <a><h1>Lifestyle</h1></a>
-            <a><h1>Contact Us</h1></a>
+        <nav class="navbar fixed-top navbar-light bg-light mb-24">
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo1.png" width="100" height="100"
+                    class="d-inline-block align-top" alt="">
+                Bootstrap
+            </a>
         </nav>
+
+        {{!-- <nav>
+            <a href="/about">
+                <h1>About Us</h1>
+            </a>
+            <a href="/recipes">
+                <h1>Recipes</h1>
+            </a>
+            <a href="/"><button id="circle"></button></a>
+            <a>
+                <h1>Lifestyle</h1>
+            </a>
+            <a>
+                <h1>Contact Us</h1>
+            </a>
+        </nav> --}}
     </header>
-    <main>
+    <main style="margin-top: 14vh; margin-left: 1rem">
         {{{body}}}
     </main>
 </body>
+
 </html>

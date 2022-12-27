@@ -9,27 +9,17 @@
     width: 10rem
 }
 
-nav {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    justify-content: center;
-    align-items: center;
-    /* background-color: white; */
-}
-
-nav h1 {
+/* nav h1 {
     text-transform: uppercase;
     font-weight: 500;
     margin-left: 1rem;
     margin-right: 1rem;
-}
+} */
 
 nav a {
     color: inherit;
     text-decoration: none;
+    font-size: x-large;
 }
 
 nav a:hover {
@@ -64,7 +54,8 @@ nav a:hover {
     align-items: center; 
     justify-content: center;
     background-color: rgb(196, 219, 212); 
-    height: 20vh; width: 100vw; 
+    height: 20vh; 
+    width: 100vw; 
     padding-top: 1rem; 
     padding-bottom: 2rem;
 }
