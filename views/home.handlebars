@@ -1,6 +1,6 @@
 <section class="container-fluid">
     <section class="row no-gutters d-flex card-deck ml-1">
-        <section class="col-12 col-md-3 mb-2">
+        <section class="col-12 col-md-3 my-2">
             <div class="card">
                 <img src="images/food.jpg" class="card-img">
                 <div class="card-body bg-dark" style="height: 40%">
@@ -8,7 +8,7 @@
                 </div>
             </div>
         </section>
-        <section class="col-12 col-md-3 my-2">
+        <section class="col-12 col-md-3 mt-2">
             <div class="card">
                 <img src="images/food.jpg" class="card-img" alt="...">
                 <div class="card-body bg-dark" style="height: 40%">
@@ -70,6 +70,28 @@
     <section>
         <div>
             <h1>The Latest Recipes:</h1>
+            {{!-- ADD BLOGS --}}
+            <ul>
+                {{#each blogs}}
+                <div class="card">
+                    <div class="card-div1">
+                        <img class="image" src="{{blog_image}}" />
+                    </div>
+                    <div class="card-div2">
+                        <h1>{{title}}</h1>
+                        <h3>{{blog_description}}</h3>
+                        <div class="read-more">
+                            <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
+                            {{#if loggedIn}}
+                            <button>Edit Blog</button>
+                            <button>Delete Blog</button>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                {{/each}}
+            </ul>
         </div>
     </section>
     <section>
