@@ -67,21 +67,48 @@
             </div>
         </div>
     </section>
+
+    {{!-- RECIPES SECTION --}}
     <section>
         <div>
             <h1>The Latest Recipes:</h1>
+
             {{!-- ADD BLOGS --}}
-            <ul>
+            <div class="row">
+                {{#each blogs}}
+                <div class="col">
+                    <div class="card">
+                        <div class="no gutters img-fluid">
+                            <img src="{{blog_image}}" class="card-img" alt="{{title}}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{title}}</h5>
+                            <p class="card-text">{{blog_description}}
+                            </p>
+                            <a href="/{{blog_id}}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{!-- END ADD BLOGS --}}
+        </div>
+    </section>
+
+
+    {{!-- <section class="container-fluid">
+        <section class="row no-gutters d-flex card-deck ml-1">
+            <section class="container-fluid my-4">
                 {{#each blogs}}
                 <div class="card">
-                    <div class="card-div1">
-                        <img class="image" src="{{blog_image}}" />
-                    </div>
-                    <div class="card-div2">
-                        <h1>{{title}}</h1>
-                        <h3>{{blog_description}}</h3>
-                        <div class="read-more">
-                            <a href="/{{blog_id}}"><button value="Read More">Read More</button></a>
+                    <div class="row no-gutters my-4">
+                        <div class="col-md-6">
+                            <img src="{{blog_image}}" class="card-img-top" alt="{{title}}" <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <button>Read More</button>
                             {{#if loggedIn}}
                             <button>Edit Blog</button>
                             <button>Delete Blog</button>
@@ -89,11 +116,29 @@
                         </div>
                     </div>
                 </div>
-                <hr>
                 {{/each}}
-            </ul>
+            </section>
+            <hr>
+        </section>
+    </section> --}}
+
+    {{!-- <section class="container-fluid my-2">
+        <div class="card">
+            <div class="row no-gutters" style="width: 18rem;">
+                <img src="{{blog_image}}" class="card-img-top" alt="{{title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{blog_description}}.</p>
+                    <a href="/{{blog_id}}" class="btn btn-primary">Read More</a>
+                    {{#if loggedIn}}
+                    <button>Edit Blog</button>
+                    <button>Delete Blog</button>
+                    {{/if}}
+                </div>
+            </div>
         </div>
-    </section>
+    </section> --}}
+
     <section>
         <div id="subscribe" class="text-center">
             <h1>Subscribe</h1>
