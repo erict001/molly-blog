@@ -5,42 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> --}}
+    {{!--
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> --}}
     <link rel="stylesheet" type="text/css" href="css/backend.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <script src="https://js.upload.io/uploader/v2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <title>Molly Blog</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar fixed-top navbar-light bg-light mb-24">
-            <a class="navbar-brand" href="#">
-                <img src="/images/logo1.png" width="100" height="100"
-                    class="d-inline-block align-top" alt="">
-                Bootstrap
-            </a>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="nav nav-fill w-100">
+                    {{!-- ABOUT ME --}}
+                    <a class="nav-item nav-link" href="/about">About Us<span class="sr-only">(current)</span></a>
+                    {{!-- END ABOUT ME --}}
 
-        {{!-- <nav>
-            <a href="/about">
-                <h1>About Us</h1>
-            </a>
-            <a href="/recipes">
-                <h1>Recipes</h1>
-            </a>
-            <a href="/"><button id="circle"></button></a>
-            <a>
-                <h1>Lifestyle</h1>
-            </a>
-            <a>
-                <h1>Contact Us</h1>
-            </a>
-        </nav> --}}
+                    {{!-- DROPDOWN ITEM --}}
+                    <div class="dropdown nav-item">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Recipes
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Appetizers</a>
+                            <a class="dropdown-item" href="#">Entrees</a>
+                            <a class="dropdown-item" href="#">Desserts</a>
+                            <a class="dropdown-item" href="#">Wine Pairings</a>
+                            <a class="dropdown-item" href="#">Vegetarian</a>
+                        </div>
+                    </div>
+                    {{!-- END DROPDOWN ITEM --}}
+
+                    {{!-- LIFESTYLE --}}
+                    <a class="nav-item nav-link" href="#">Lifestyle</a>
+                    {{!-- END LIFESTYLE --}}
+
+                    {{!-- CONTACT PAGE --}}
+                    <a class="nav-item nav-link" href="#">Contact Us</a>
+                    {{!-- END CONTACT --}}
+                </div>
+            </div>
+        </nav>
+        {{!-- <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul> --}}
     </header>
-    <main style="margin-top: 14vh; margin-left: 1rem">
+    <main style="margin-top: 1vh; margin-left: 1rem">
         {{{body}}}
     </main>
 </body>
