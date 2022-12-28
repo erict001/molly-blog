@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{!--
-    <link rel="stylesheet" type="text/css" href="css/style.css" /> --}}
     <link rel="stylesheet" type="text/css" href="css/backend.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://js.upload.io/uploader/v2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
     <title>Molly Blog</title>
 </head>
 
@@ -27,16 +27,17 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     {{!-- ABOUT ME --}}
-                    <a class="nav-item nav-link" style="font-size: 20px !important" href="/about">About Us</a>
+                    <a class="nav-item nav-link mr-2" style="font-size: 20px !important" href="/about">About Us</a>
                     {{!-- END ABOUT ME --}}
 
                     {{!-- DROPDOWN ITEM --}}
-                    <div class="dropdown nav-item">
-                        <button class="btn dropdown-toggle" style="font-size: 20px !important" type="button" id="dropdownMenuButton"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown nav-item mr-2">
+                        <button class="btn dropdown-toggle" style="font-size: 20px !important" type="button"
+                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             Recipes
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu mr-2" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Appetizers</a>
                             <a class="dropdown-item" href="#">Entrees</a>
                             <a class="dropdown-item" href="#">Desserts</a>
@@ -56,22 +57,8 @@
                 </div>
             </div>
         </nav>
-        {{!-- <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-        </ul> --}}
     </header>
-    <main style="margin-top: 1vh; margin-left: 1rem">
+    <main style="margin-top: 1vh;">
         {{{body}}}
     </main>
 </body>

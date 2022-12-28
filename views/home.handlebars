@@ -20,7 +20,7 @@
             <div class="card">
                 <img src="images/food.jpg" class="card-img" alt="...">
                 <div class="card-body bg-dark" style="height: 40%">
-                    <h2 class="card-title text-white text-center">Deserts</h2>
+                    <h2 class="card-title text-white text-center">Desserts</h2>
                 </div>
             </div>
         </section>
@@ -69,9 +69,9 @@
     </section>
 
     {{!-- RECIPES SECTION --}}
-    <section>
+    <section class="my-4">
         <div>
-            <h1>The Latest Recipes:</h1>
+            <h1 class="mb-3">The Latest Recipes:</h1>
 
             {{!-- ADD BLOGS --}}
             <div class="row">
@@ -86,6 +86,7 @@
                             <p class="card-text">{{blog_description}}
                             </p>
                             <a href="/{{blog_id}}" class="btn btn-primary">Read More</a>
+                            <p>Created at: {{created_at}}</p>
                         </div>
                     </div>
                 </div>
@@ -94,55 +95,25 @@
             {{!-- END ADD BLOGS --}}
         </div>
     </section>
+    {{!-- END BLOG SECTION --}}
 
-
-    {{!-- <section class="container-fluid">
-        <section class="row no-gutters d-flex card-deck ml-1">
-            <section class="container-fluid my-4">
-                {{#each blogs}}
-                <div class="card">
-                    <div class="row no-gutters my-4">
-                        <div class="col-md-6">
-                            <img src="{{blog_image}}" class="card-img-top" alt="{{title}}" <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <button>Read More</button>
-                            {{#if loggedIn}}
-                            <button>Edit Blog</button>
-                            <button>Delete Blog</button>
-                            {{/if}}
-                        </div>
-                    </div>
-                </div>
-                {{/each}}
-            </section>
-            <hr>
-        </section>
-    </section> --}}
-
-    {{!-- <section class="container-fluid my-2">
-        <div class="card">
-            <div class="row no-gutters" style="width: 18rem;">
-                <img src="{{blog_image}}" class="card-img-top" alt="{{title}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{title}}</h5>
-                    <p class="card-text">{{blog_description}}.</p>
-                    <a href="/{{blog_id}}" class="btn btn-primary">Read More</a>
-                    {{#if loggedIn}}
-                    <button>Edit Blog</button>
-                    <button>Delete Blog</button>
-                    {{/if}}
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
+    {{!-- SUBSCRIPTION SECTION --}}
     <section>
-        <div id="subscribe" class="text-center">
+        <div id="subscribe" class="text-center d-flex flex-column justify-content-center align-items-center py-4"
+            style="height: min-content; background-color: rgb(196, 219, 212);">
             <h1>Subscribe</h1>
-            <button style="width: max-content; height: max-content; padding: 10px">Subscribe here!</button>
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="name" class="form-control" id="nameElement" aria-describedby="nameHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
+                </div>
+                <button type="submit" "width: max-content; height: max-content; padding: 10px">Subscribe here!</button>
+            </form>
         </div>
     </section>
 </section>
