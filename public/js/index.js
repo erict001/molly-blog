@@ -17,67 +17,66 @@ const addBlogs = async () => {
   return json;
 }
 
+// const addLi = (listEl) => {
+//   //grabbing html elements for card
+//   const listOne = document.createElement("li");
+//   const cardDiv = document.createElement("div");
+//   const cardDivOne = document.createElement("div");
+//   const image = document.createElement("img");
+//   const cardDivTwo = document.createElement("div");
+//   const h1 = document.createElement("h1");
+//   const h3 = document.createElement("h3");
+//   const createButton = document.createElement("button");
+//   const buttonDiv = document.createElement("div")
 
-const addLi = (listEl) => {
-  //grabbing html elements for card
-  const listOne = document.createElement("li");
-  const cardDiv = document.createElement("div");
-  const cardDivOne = document.createElement("div");
-  const image = document.createElement("img");
-  const cardDivTwo = document.createElement("div");
-  const h1 = document.createElement("h1");
-  const h3 = document.createElement("h3");
-  const createButton = document.createElement("button");
-  const buttonDiv = document.createElement("div")
+//   //adding classes to the elements to style
+//   cardDiv.className = "card";
+//   cardDivOne.className = "card-div1";
+//   image.className = "image";
+//   cardDivTwo.className = "card-div2";
+//   buttonDiv.className = "read-more";
 
-  //adding classes to the elements to style
-  cardDiv.className = "card";
-  cardDivOne.className = "card-div1";
-  image.className = "image";
-  cardDivTwo.className = "card-div2";
-  buttonDiv.className = "read-more";
+//   //adding text to element
+//   image.setAttribute("src", `${listEl.blog_image}`)
+//   h1.innerHTML = `${listEl.title}`;
+//   console.log(h1);
+//   h3.innerHTML = `${listEl.blog_description}`;
+//   console.log(h3);
+//   createButton.textContent = "Read More"
 
-  //adding text to element
-  image.setAttribute("src", `${listEl.blog_image}`)
-  h1.innerHTML = `${listEl.title}`;
-  console.log(h1);
-  h3.innerHTML = `${listEl.blog_description}`;
-  console.log(h3);
-  createButton.textContent = "Read More"
+//   //set button href attribute
+//   createButton.addEventListener("click", function () {
+//     location.href = `/${listEl.blog_id}`
+//   })
 
-  //set button href attribute
-  createButton.addEventListener("click", function () {
-    location.href = `/${listEl.blog_id}`
-  })
-
-  //append everything together
-  ul.append(listOne);
-  listOne.appendChild(cardDiv);
-  cardDivOne.append(image);
-  cardDivTwo.append(h1, h3);
-  cardDivTwo.appendChild(buttonDiv)
-  cardDiv.append(cardDivOne, cardDivTwo);
-  // cardDiv.appendChild(cardDivTwo);
-  buttonDiv.appendChild(createButton)
-}
+//   //append everything together
+//   ul.append(listOne);
+//   listOne.appendChild(cardDiv);
+//   cardDivOne.append(image);
+//   cardDivTwo.append(h1, h3);
+//   cardDivTwo.appendChild(buttonDiv)
+//   cardDiv.append(cardDivOne, cardDivTwo);
+//   // cardDiv.appendChild(cardDivTwo);
+//   buttonDiv.appendChild(createButton)
+// }
 
 
-function buttonHandler() {
-  addBlogs()
-    .then((response) => response.forEach((item) => addLi(item)));
-}
+// function buttonHandler() {
+//   addBlogs()
+//     .then((response) => response.forEach((item) => addLi(item)));
+// }
 
-buttonHandler()
+// buttonHandler()
 
 
 
 // MODAL
 // Get the modal
-var modal = document.getElementById("myModal");
+const modal = document.getElementById("myModal");
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+const btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
 
 const changePage = document.getElementById("redirect")
 

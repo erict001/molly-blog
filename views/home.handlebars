@@ -3,7 +3,7 @@
         <section class="col-12 col-md-3 my-2">
             <div class="card">
                 <img src="images/food.jpg" class="card-img">
-                <div class="card-body bg-dark" style="height: 40%">
+                <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Appetizers</h2>
                 </div>
             </div>
@@ -11,7 +11,7 @@
         <section class="col-12 col-md-3 mt-2">
             <div class="card">
                 <img src="images/food.jpg" class="card-img" alt="...">
-                <div class="card-body bg-dark" style="height: 40%">
+                <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Entrees</h2>
                 </div>
             </div>
@@ -19,7 +19,7 @@
         <section class="col-12 col-md-3 my-2">
             <div class="card">
                 <img src="images/food.jpg" class="card-img" alt="...">
-                <div class="card-body bg-dark" style="height: 40%">
+                <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Desserts</h2>
                 </div>
             </div>
@@ -27,7 +27,7 @@
         <section class="col-12 col-md-3 mt-2">
             <div class="card">
                 <img src="images/food.jpg" class="card-img h-100" alt="...">
-                <div class="card-body bg-dark" style="height: 40%">
+                <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Wine Pairings</h2>
                 </div>
             </div>
@@ -81,12 +81,12 @@
                         <div class="no gutters img-fluid">
                             <img src="{{blog_image}}" class="card-img" alt="{{title}}">
                         </div>
-                        <div class="card-body">
+                        <div class="card-body text-white" style="background-color: rgb(127, 104, 104">
                             <h5 class="card-title">{{title}}</h5>
                             <p class="card-text">{{blog_description}}
                             </p>
                             <a href="/{{blog_id}}" class="btn btn-primary">Read More</a>
-                            <p>Created at: {{created_at}}</p>
+                            {{!-- <p>Created at: {{created_at}}</p> --}}
                         </div>
                     </div>
                 </div>
@@ -117,3 +117,23 @@
         </div>
     </section>
 </section>
+<footer style="height: 30vh; display: flex">
+    <section style="margin-left: 2vw; width: 60%">
+        {{#if loggedIn}}
+        <div style="display:flex; flex-direction:column">
+            <a href="/">Home</a>
+            <a href="/profile">Dashboard</a>
+            <a href="/api/users/logout">Logout</a>
+            <a href="/add-post"><button>Add a Post</button></a>
+        </div>
+        {{else}}
+        <div style="display:flex; flex-direction:column">
+            <a href="/login">Login</a>
+            <a href="/add-post">Add a Post</a>
+        </div>
+        {{/if}}
+    </section>
+    <section>
+        <p>Second section</p>
+    </section>
+</footer>
