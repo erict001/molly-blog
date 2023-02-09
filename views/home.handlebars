@@ -1,36 +1,36 @@
 <section class="container-fluid">
     <section class="row no-gutters d-flex card-deck ml-1">
         <section class="col-12 col-md-3 my-2">
-            <div class="card">
+            <a href="/appetizers"><div class="card">
                 <img src="images/food.jpg" class="card-img">
                 <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Appetizers</h2>
                 </div>
-            </div>
+            </div></a>
         </section>
         <section class="col-12 col-md-3 mt-2">
-            <div class="card">
+            <a href="/entrees"><div class="card">
                 <img src="images/food.jpg" class="card-img" alt="...">
                 <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Entrees</h2>
                 </div>
-            </div>
+            </div></a>
         </section>
         <section class="col-12 col-md-3 my-2">
-            <div class="card">
+            <a href="/desserts"><div class="card">
                 <img src="images/food.jpg" class="card-img" alt="...">
                 <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Desserts</h2>
                 </div>
-            </div>
+            </div></a>
         </section>
         <section class="col-12 col-md-3 mt-2">
-            <div class="card">
+            <a href="/wine-pairings"><div class="card">
                 <img src="images/food.jpg" class="card-img h-100" alt="...">
                 <div class="card-body" style="height: 40%; background-color: rgb(127, 104, 104)">
                     <h2 class="card-title text-white text-center">Wine Pairings</h2>
                 </div>
-            </div>
+            </div></a>
         </section>
     </section>
     <section class="container-fluid my-4">
@@ -117,7 +117,7 @@
         </div>
     </section>
 </section>
-<footer style="height: 30vh; display: flex">
+<footer style="height: 30vh; display: flex; margin-top: 1vh; background-color:rgb(127, 104, 104)">
     <section style="margin-left: 2vw; width: 60%">
         {{#if loggedIn}}
         <div style="display:flex; flex-direction:column">
@@ -128,8 +128,8 @@
         </div>
         {{else}}
         <div style="display:flex; flex-direction:column">
-            <a href="/login">Login</a>
-            <a href="/add-post">Add a Post</a>
+            <a href="/login"  style="color: white">Login</a>
+            <a href="/add-post" style="color: white">Add a Post</a>
         </div>
         {{/if}}
     </section>

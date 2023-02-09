@@ -6,8 +6,9 @@ const sequelize = require('./config/connection.js');
 const routes = require('./routes');
 const mysql = require('mysql2');
 const Uploader = require("uploader");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const port = 3000
+const port = 3002
 
 
 
@@ -30,6 +31,18 @@ const db = mysql.createConnection(
   },
   console.log(`Connected to the molly_blogs_db database.`)
 );
+
+const sess = {
+  secret: process.env.SESSION_SECRET,
+  cookie: {
+    maxAge: 2 * 60 * 60 * 1000
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
 
 // WORKING ON MODULARIZING ROUTES
 //Initializing Express Handlebars

@@ -28,6 +28,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   Blog.create({
     title:req.body.title,
+    blog_tyle: req.body.blog_type,
     blog_content_1:req.body.blog_content_1,
     blog_content_2:req.body.blog_content_2,
     blog_content_3:req.body.blog_content_3,
@@ -54,11 +55,8 @@ router.put("/:id", async (req, res) => {
     {
       where: {
       id: req.params.id
-    },
-    })
-  .then((updatedBlog) => {
-    res.redirect("/home");
-  })
+    }
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: "an error occured", err });

@@ -1,53 +1,40 @@
 <header class="bigBody">
     <h1>Add a New Page</h1>
-    <a href="/"><button id="pageChange">Home Page</button></a>
+    {{!-- <a href="/"><button id="pageChange">Home Page</button></a> --}}
 </header>
 <section class="new-blog">
+    <section class="blog_area">
+        <di>
+        <div>
+            <button id="add-media">Add Media</button>
+
+        </div>
+            <textarea id="blog-title" placeholder="Blog title"></textarea>
+        </div>
+        <div>
+            <textarea name="blog-description" id="blog-description" placeholder="Blog Description"></textarea>
+        </div>
+    </section>
     <div>
-        <textarea id="blog-title" placeholder="Blog title"></textarea>
-    </div>
-    <button id="add-media">Add Media</button>
-    <div>
-        <textarea name="blog-description" id="blog-description" placeholder="Blog Description"></textarea>
-    </div>
-    <div>
-        <div style="display: flex; justify-content: space-evenly; margin-left: 2vw; width: 80%">
-            <select name="contentSelector" id="contentSelector">
-                <option value="bg1">First Paragraph</option>
-                <option value="bg2">Recipes</option>
-                <option value="bg3">Instructions</option>
-                <option value="bg4">Summary</option>
-                <option value="bg5">Blog Content 5</option>
+        <div style="display: flex; justify-content: space-evenly; margin-left: 2vw; width: 90%">
+            {{!-- <select name="contentSelector" id="contentSelector">
+                <option value="Appetizers">Appetizers</option>
+                <option>Entrees</option>
+                <option>Desserts</option>
+                <option>Wine Pairings</option>
+                <option>Vegetarian</option>
+                <option>Lifestyle</option>
             </select>
-            <button id="blogButton">Select Blog</button>
-            <button id="addTextBox">Add Text Box</button>
-            <div style="margin-right: 0.5vw">
-                <select name="header-style" id="header-style">
-                    <option value="title">Title</option>
-                    <option value="h1">Header 1</option>
-                    <option value="h2">Header 2</option>
-                    <option value="h3">Header 3</option>
-                    <option value="h4">Header 4</option>
-                    <option value="p">Paragraph</option>
-                </select>
-                <button id="headerFont">Change Text Size</button>
-            </div>
-            <button id="bold"><b>Bold</b></button>
-            <button id="italic"><i>Italic</i></button>
-            <button id="underline"><u>Underline</u></button>
-            <div>
-                <select name="font-families" id="font-families">
-                    <option value="arial">Arial</option>
-                    <option value="verdana">Verdana</option>
-                    <option value="tahoma">Tahoma</option>
-                    <option value="times-new-roman">Times New Roman</option>
-                    <option value="courier-new">Cournier New</option>
-                </select>
-                <button id="changeText">Change Fonts</button>
-            </div>
-            <div>
-                <input type="color" id="favcolor" name="favcolor" value="#000000">
-            </div>
+            <button id="contentButton">Set Content</button> --}}
+            <section style="display: flex; justify-content: space-evenly; width: 90%">
+                <button class="items" id="apps">Appetizers</button>
+                <button class="items" id="entrees">Entrees</button>
+                <button class="items" id="desserts">Desserts</button>
+                <button class="items" id="wine">Wine Pairings</button>
+                <button class="items" id="veggie">Vegertarian</button>
+                <button class="items" id="life">Lifestyle</button>
+            </section>
+            <button style="display: none" id="blogButton">Select Blog</button>
         </div>
     </div>
     <section id="blog_content_section">
@@ -70,7 +57,7 @@
             </div>
             </div>
         </ul>
-        <section style="display:flex; justify-content: center; width: 80%">
+        <section style="display:flex; justify-content: center; width: 90%">
             <div>
                 <button id="submit">Submit</button>
             </div>
