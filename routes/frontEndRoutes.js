@@ -38,7 +38,7 @@ router.get('/login', (req, res) => {
 router.get('/appetizers', async (req, res) => {
     try {
         await Blog.findAll().then(blogs => {
-            const appBlogs = blogs.filter(blog => blog.blog_type === "Appetizers")
+            const appBlogs = blogs.find(blog => blog.blog_type === "Appetizers")
             res.render("appetizers",{ blogs: appBlogs})
         })
     } catch (err) {
@@ -49,10 +49,7 @@ router.get('/appetizers', async (req, res) => {
 router.get('/wine-pairings', async (req, res) => {
     try {
         await Blog.findAll().then(blogs => {
-            // const appBlogs = blogs.map(blog => blog.get({ plain: true }))
-            //     res.render("wine-pairings", {blogs: appBlogs})
-            // }
-            const appBlogs = blogs.map(blog => blog.get({ plain: true }))
+            const appBlogs = blogs.find(blog => blog.blog_type === "Wine")
             res.render("wine-pairings", {blogs: appBlogs})
         })
     } catch (err) {
@@ -63,7 +60,7 @@ router.get('/wine-pairings', async (req, res) => {
 router.get('/desserts', async (req, res) => {
     try {
         await Blog.findAll().then(blogs => {
-            const appBlogs = blogs.map(blog => blog.get({ plain: true }))
+            const appBlogs = blogs.find(blog => blog.blog_type === "Deserts")
             res.render("desserts",{ blogs: appBlogs})
         })
     } catch (err) {
@@ -74,7 +71,7 @@ router.get('/desserts', async (req, res) => {
 router.get('/entrees', async (req, res) => {
     try {
         await Blog.findAll().then(blogs => {
-            const appBlogs = blogs.filter("Appetizers", blog => blog.get({ plain: true }))
+            const appBlogs = blogs.find(blog => blog.blog_type === "Entrees")
             res.render("entrees",{ blogs: appBlogs})
         })
     } catch (err) {
