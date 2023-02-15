@@ -38,6 +38,7 @@ router.get('/login', (req, res) => {
 router.get('/appetizers', async (req, res) => {
     try {
         await Blog.findAll().then(blogs => {
+            console.log(req.params)
             const appBlogs = blogs.find(blog => blog.blog_type === "Appetizers")
             res.render("appetizers",{ blogs: appBlogs})
         })
