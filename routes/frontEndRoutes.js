@@ -2,17 +2,26 @@ const router = require('express').Router();
 const { User, Blog } = require('../models');
 
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
     try {
-        await  Blog.findAll({include:[User]}).then(blogs=>{
+        Blog.findAll({include:[User]}).then(blogs=>{
             const hbsBlogs = blogs.map(blog=>blog.get({plain:true}))
-            res.render("home",{blogs:hbsBlogs, loggedIn: req.session.loggedIn})
+            const loggedIn = req.session.user?true:false
+            res.render("home",{blogs:hbsBlogs, loggedIn,username:req.session.user?.username})
         })
         }
      catch (err) {
         res.status(500).json(err)
     }
-    // res.render("home")
+});
+
+router.get('/login', (req, res) => {
+    if(req.session.loggedIn){
+        res.redirect("/")
+        return;
+    } 
+    //If the user isn't logged in, render the login template
+    res.render("login")
 });
 
 router.get('/recipes', async (req, res) => {
@@ -24,15 +33,6 @@ router.get('/recipes', async (req, res) => {
     } catch (err) {
         res.status(500).json(err)
     }
-});
-
-router.get('/login', (req, res) => {
-    if(req.session.user){
-        res.redirect("/")
-        return;
-    } 
-    //If the user isn't logged in, render the login template
-    res.render("login")
 });
 
 router.get('/appetizers', async (req, res) => {

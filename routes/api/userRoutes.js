@@ -1,54 +1,38 @@
-const express = require("express");
-const router = express.Router();
-const {User,Blog} = require("../../models");
+const router = require("express").Router();
+const { User } = require("../../models");
 const bcrypt  = require("bcrypt");
-
-//find all
-router.get("/", (req, res) => {
-  User.findAll({
-    include:[ Blog ]
-  })
-    .then(dbUsers => {
-      res.json(dbUsers);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({ msg: "an error occured", err });
-    });
-});
 
 // Login
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const userData = await User.findOne({
       where: {
-        email: req.body.email,
+        username: req.body.username,
       },
     });
 
-    if (!dbUserData) {
+    if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
 
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
-
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);

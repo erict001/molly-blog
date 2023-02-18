@@ -3,13 +3,16 @@ console.log("linked")
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
-    const username = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
+    const userObj = {
+      username: document.querySelector('#username').value.trim(),
+      password: document.querySelector('#password').value.trim()
+
+    }
   
     if (username && password) {
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify(userObj),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -24,13 +27,15 @@ const loginFormHandler = async (event) => {
   const signupFormHandler = async (event) => {
     event.preventDefault();
   
-    const username = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
-  
+    const userObj = {
+      username: document.querySelector('#username').value.trim(),
+      password: document.querySelector('#password').value.trim()
+    }  
+
     if (username && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify(userObj),
         headers: { 'Content-Type': 'application/json' },
       });
   
