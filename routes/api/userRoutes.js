@@ -17,92 +17,69 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/logout",(req,res)=>{
-  req.session.destroy();
-  res.redirect("/")
-})
-
-//find one
-router.get("/:id", (req, res) => {
-  User.findByPk(req.params.id)
-    .then(dbUser => {
-      res.json(dbUser);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({ msg: "an error occured", err });
+// Login
+router.post('/login', async (req, res) => {
+  try {
+    const dbUserData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
     });
-});
 
-//create user
-router.post("/", (req, res) => {
-  User.create(req.body)
-    .then(newUser => {
-      req.session.user = {
-        id:newUser.id,
-        username:newUser.username
-      }
-      res.json(newUser);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({ msg: "an error occured", err });
+    if (!dbUserData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+
+    const validPassword = await dbUserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
+    }
+
+    // Once the user successfully logs in, set up the sessions variable 'loggedIn'
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res
+        .status(200)
+        .json({ user: dbUserData, message: 'You are now logged in!' });
     });
-});
-
-router.post("/login", (req, res) => {
-  User.findOne({
-    where:{
-    username:req.body.username
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
-}).then(foundUser=>{
-    if(!foundUser){
-      return res.status(400).json({msg:"wrong login credentials"})
-    }
-    if(bcrypt.compareSync(req.body.password,foundUser.password)){
-      req.session.user = {
-        id:foundUser.id,
-        username:foundUser.username
-      }
-      return res.json(foundUser)
-    } else {
-      return res.status(400).json({msg:"wrong login credentials"})
-    }
-  }).catch(err => {
-      console.log(err);
-      res.status(500).json({ msg: "an error occured", err });
+});
+
+// Logout
+router.post('/logout', (req, res) => {
+  // When the user logs out, destroy the session
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
     });
+  } else {
+    res.status(404).end();
+  }
 });
 
-//update user
-router.put("/:id", (req, res) => {
-  User.update(req.body, {
-    where: {
-      id: req.params.id
-    }
-  }).then(updatedUser => {
-    res.json(updatedUser);
-  })
-  .catch(err => {
+//GET one user
+router.get("/:id", (req, res) => {
+  try {
+    const userData = User.findByPk(req.params.id)
+    if (!userData) {
+      res.status(404).json({message: "There is no user with this id!"})
+    } 
+    res.status(200).json(userData)
+  } catch (err) {
     console.log(err);
     res.status(500).json({ msg: "an error occured", err });
-  });
+  }
 });
-
-//delete a user
-router.delete("/:id", (req, res) => {
-  User.destroy({
-    where: {
-      id: req.params.id
-    }
-  }).then(delUser => {
-    res.json(delUser);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json({ msg: "an error occured", err });
-  });
-});
-
 
 module.exports = router;

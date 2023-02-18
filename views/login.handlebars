@@ -1,5 +1,3 @@
-
-
 <section class="container-fluid my-4">
     <div class="card">
         <div class="row no-gutters">
@@ -7,21 +5,37 @@
                 <img src="images/food.jpg" class="card-img" alt="...">
             </div>
             <div class="col-md-5">
-                <div>
-    <div class="ml-4 mt-4 text-center">
-        <h1>Login: </h1>
-        <div class="my-2" style="display: flex">
-            <h3>Username: </h3>
-            <input style="width: 60%; margin-left: 1vw" type="password" placeholder="username">
-        </div>
-        <div style="display: flex">
-            <h3>Password: </h3>
-            <input style="width: 60%; margin-left: 1vw" type="password" placeholder="password">
-        </div>
-        <button class="my-2">Submit</button>
-    </div>
-</div>
+                {{!-- <div>
+                    <div class="ml-4 mt-4 text-center">
+                        <h1>Login: </h1>
+                        <div class="my-2" style="display: flex">
+                            <h3>Username: </h3>
+                            <input id="username" style="width: 60%; margin-left: 1vw" type="password"
+                                placeholder="username">
+                        </div>
+                        <div style="display: flex">
+                            <h3>Password: </h3>
+                            <input id="password" style="width: 60%; margin-left: 1vw" type="password"
+                                placeholder="password">
+                        </div>
+                        <button class="my-2">Submit</button>
+                    </div>
+                </div> --}}
+                <form class="form login-form">
+                    <div class="form-group">
+                        <label for="username-login">Username:</label>
+                        <input class="form-input" type="text" id="username" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password-login">Password:</label>
+                        <input class="form-input" type="password" id="password" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">login</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
+<script src="js/login.js"></script>
