@@ -8,7 +8,7 @@ const loginFormHandler = async (event) => {
       password: document.querySelector('#password').value.trim()
 
     }
-  
+
     if (username && password) {
       const response = await fetch('/api/users/login', {
         method: 'POST',
@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        location.href('/');
       } else {
         alert('Failed to log in.');
       }
