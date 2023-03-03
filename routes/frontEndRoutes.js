@@ -2,26 +2,20 @@ const router = require('express').Router();
 const { User, Blog } = require('../models');
 
 
-router.get('/', (req, res) => {
-    try {
-        Blog.findAll({include:[User]}).then(blogs=>{
-            const hbsBlogs = blogs.map(blog=>blog.get({plain:true}))
-            res.render("home",{
-                blogs:hbsBlogs, 
-                username:req.session.user?.username,
-                loggedIn: req.session.loggedIn
-            })
-        })
-        }
-     catch (err) {
-        res.status(500).json(err)
-    }
+router.get("/",(req,res)=>{
+    Blog.findAll({include:[User]}).then(blogs=>{
+        const hbsBlogs = blogs.map(blog=>blog.get({plain:true}))
+        const loggedIn = req.session.loggedIn
+        res.render("home",{
+            blogs:hbsBlogs,
+            loggedIn,
+            username:req.session.user?.username})
+    })
 });
 
 router.get('/login', (req, res) => {
     if(req.session.loggedIn){
-        res.redirect("/")
-        return;
+        return res.redirect("/")
     } 
     //If the user isn't logged in, render the login template
     res.render("login")

@@ -8,6 +8,7 @@ const Uploader = require("uploader");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
+//Sets up the Express App
 
 const app = express();
 const port = 3001

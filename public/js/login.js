@@ -1,56 +1,25 @@
 console.log("linked")
 
 const loginFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const userObj = {
-      username: document.querySelector('#username').value.trim(),
-      password: document.querySelector('#password').value.trim()
+  event.preventDefault();
 
-    }
+  const username = document.querySelector('#username').value.trim()
 
-    if (username && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify(userObj),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        location.href('/');
-      } else {
-        alert('Failed to log in.');
-      }
-    }
-  };
-  
-  const signupFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const userObj = {
-      username: document.querySelector('#username').value.trim(),
-      password: document.querySelector('#password').value.trim()
-    }  
+  const password = document.querySelector('#password').value.trim()
 
-    if (username && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify(userObj),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to sign up.');
-      }
+  if (username && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ username, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      res.redirect('/');
+    } else {
+      alert('Failed to log in.');
     }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-  
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+  }
+};
+
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
