@@ -6,14 +6,13 @@ router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
     if (!userData) {
-      res.json("There is nothing")
-      return alert("Incorrect username or passowrd");
+      return res.status(400).json({msg:"wrong login credentials"})
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      return alert("Incorrect username or passowrd");
+      return res.status(400).json({msg:"wrong login credentials"})
     }
 
     req.session.save(() => {
@@ -24,7 +23,7 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
-    res.status(400).json(err);
+    alert(err);
   }
 });
 
@@ -34,7 +33,6 @@ router.get('/logout', function(req, res) {
      if(err){
         console.log(err);
      }else{
-         console.log(req.session);
          res.redirect('/login');
      }
   });

@@ -1,25 +1,25 @@
 console.log("linked")
 
-const loginFormHandler = async (event) => {
+document.querySelector('.login-form').addEventListener("submit",event => {
   event.preventDefault();
 
-  const username = document.querySelector('#username').value.trim()
-
-  const password = document.querySelector('#password').value.trim()
-
-  if (username && password) {
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ username, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      location.href = '/';
-    } else {
-      alert('Failed to log in.');
-    }
+  const userObj = {
+    username: document.getElementById("username").value,
+    password: document.getElementById("password").value
   }
-};
+  console.log(userObj)
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+  fetch("/api/users/login", {
+    method: 'POST',
+    body: JSON.stringify(userObj),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(res => {
+    if (res.ok) {
+      location.href = '/'
+    } else {
+      alert("failed")
+    }
+  })
+});
