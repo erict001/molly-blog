@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      res.redirect('/');
+      location.href = '/';
     } else {
       alert('Failed to log in.');
     }

@@ -5,21 +5,15 @@ const { User } = require("../../models");
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
-
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect username or password, please try again' });
-      return;
+      res.json("There is nothing")
+      return alert("Incorrect username or passowrd");
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
+      return alert("Incorrect username or passowrd");
     }
 
     req.session.save(() => {
@@ -35,13 +29,15 @@ router.post('/login', async (req, res) => {
 });
 
 // Logout
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
+router.get('/logout', function(req, res) {
+  req.session.destroy(function(err){
+     if(err){
+        console.log(err);
+     }else{
+         console.log(req.session);
+         res.redirect('/login');
+     }
+  });
 });
+
 module.exports = router;
