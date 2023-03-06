@@ -51,7 +51,7 @@ router.get('/wine-pairings', async (req, res) => {
     try {
         await Blog.findAll({
             where: {
-               blog_type: "wine-pairings" 
+               blog_type: "wine" 
             }
         }).then(blogs => {
             const appBlogs = blogs.map(blog => blog.get({ plain: true }))
@@ -93,8 +93,11 @@ router.get('/entrees', async (req, res) => {
 })
 
 router.get('/add-post', (req, res) => {
-    res.render('backend')
-});
+    const loggedIn = req.session.loggedIn
+    res.render('backend', {
+        loggedIn,
+        username:req.session.user?.username})
+    });
 
 router.get("/about", (req, res) => {
     res.render("about")
