@@ -34,9 +34,12 @@ router.get('/recipes', async (req, res) => {
 
 router.get('/appetizers', async (req, res) => {
     try {
-        await Blog.findAll().then(blogs => {
-            console.log(req.params)
-            const appBlogs = blogs.find(blog => blog.blog_type === "Appetizers")
+        await Blog.findAll({
+            where: {
+               blog_type: "Appetizers" 
+            }
+        }).then(blogs => {
+            const appBlogs = blogs.map(blog => blog.get({ plain: true }))
             res.render("appetizers",{ blogs: appBlogs})
         })
     } catch (err) {
